@@ -195,18 +195,30 @@ class _PhoneFieldHintState extends State<PhoneFieldHint> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.child != null ? InkWell(
-      onTap: () async{
-           _hintShown = true;
-                      await _askPhoneHint();
-      },
-    child: widget.child,)
-      
-      : 
+    return widget.child ?? 
         TextField(
           autofocus: widget.autofocus,
           focusNode: _focusNode,
           decoration: InputDecoration(
+             labelText: "Enter Your Mobile Number",
+                          labelStyle:
+                              TextStyle(fontSize: 14, color: Colors.black),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 0.8),
+                          ),
+                          disabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          prefix: Text(" +91 "),
+                          border: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1)),
             suffixIcon: Platform.isAndroid
                 ? IconButton(
                     icon: Icon(Icons.phonelink_setup),
