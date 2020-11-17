@@ -195,7 +195,14 @@ class _PhoneFieldHintState extends State<PhoneFieldHint> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.child ??
+    return widget.child != null ? InkWell(
+      onTap: (){
+           _hintShown = true;
+                      await _askPhoneHint();
+      },
+    child: widget.child,)
+      
+      : 
         TextField(
           autofocus: widget.autofocus,
           focusNode: _focusNode,
