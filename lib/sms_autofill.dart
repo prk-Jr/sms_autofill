@@ -215,7 +215,7 @@ class _PhoneFieldHintState extends State<PhoneFieldHint> {
                             borderSide:
                                 BorderSide(color: Colors.black, width: 1),
                           ),
-                          prefix: Text(" +91 "),
+                        
                           border: OutlineInputBorder(
                               borderSide:
                                   BorderSide(color: Colors.black, width: 1)),
